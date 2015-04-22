@@ -23,3 +23,6 @@ else
 	set t_Co=16
 	let g:solarized_termcolors=16
 endif
+
+let NERDTreeShowHidden=1
+set autochdir
