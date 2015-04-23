@@ -5,15 +5,19 @@ read -r -p "Overwrite all current VIM settings for the current user and place ol
 response=${response,,} #tolower
 if [[ $response =~ ^(yes|y)$ ]]
 then
-	# Move .vimrc and .vim into a backup directory
-	rm -rf ~/.vim.bak
-	mkdir -p ~/.vim.bak
-	mv ~/.vimrc ~/.vim.bak
-	cp -r ~/.vim ~/.vim.bak
-	rm -rf ~/.vim
+    #noop
+    echo "Installing..."
 else
 	exit
 fi
+
+# Move .vimrc and .vim into a backup directory
+rm -rf ~/.vim.bak
+mkdir -p ~/.vim.bak
+mv ~/.vimrc ~/.vim.bak
+cp -r ~/.vim ~/.vim.bak
+rm -rf ~/.vim
+cp -r .vim ~/.vim
 
 # Move current directories and files into .vim.bak
 
@@ -30,3 +34,6 @@ git clone git://github.com/altercation/vim-colors-solarized.git
 
 # Install Nerdtree
 git clone https://github.com/scrooloose/nerdtree.git
+
+# Install FuzzyFinder
+git clone https://github.com/vim-scripts/FuzzyFinder
