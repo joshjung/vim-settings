@@ -1,18 +1,36 @@
-" No wrap
+syntax enable
 set nowrap
-
-" Set line numbers
 set number
+set smartindent
+set autoindent
+set showmatch
+set splitbelow
+set splitright
+
+set ts=4
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+set backup
+set backupdir=~/.vim/backup,/tmp
+
+set undodir=~/.vim/undodir
+set undofile
+
+nmap <F2> :NERDTreeToggle<CR>
+nnoremap <F5> :exe "mksession! " . v:this_session<CR>
+
+set nocompatible
+set encoding=utf-8
 
 " Setup pathogen
 execute pathogen#infect()
-syntax on
 
 " Setup file detection
 filetype plugin indent on
 
 " Setup theme related stuff
-syntax enable
 set background=dark
 colorscheme solarized
 
